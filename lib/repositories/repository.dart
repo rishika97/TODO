@@ -1,4 +1,5 @@
 import 'package:TODO/repositories/db_connection.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:sqflite/sqflite.dart';
 
 class Repository{
@@ -19,7 +20,10 @@ class Repository{
 
   save(table, data) async{
     var connection = await database;
-    return await connection.insert(table, data); 
+    return await connection.insert(table, data);
   }
 
+  getAll(table)async{
+    return await _database.query(table);
+  }
 }
