@@ -58,7 +58,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                   var result = await _categoryService.saveCategory(_category);
                   if(result > 0){
                     Navigator.pop(context);
-                    _showSnackBar(Text('Data Added Successfully'));
+                    _showSnackBar(Text('Data Saved Successfully'));
                   }
                   print(result);
                 },

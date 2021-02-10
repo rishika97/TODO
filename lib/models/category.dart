@@ -11,5 +11,4 @@ class Category{
 
     return map;
   }
-
 }

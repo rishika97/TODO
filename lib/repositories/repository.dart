@@ -1,5 +1,4 @@
 import 'package:TODO/repositories/db_connection.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:sqflite/sqflite.dart';
 
 class Repository{
@@ -41,5 +40,10 @@ class Repository{
   delete(String table, itemId)async{
     var connection = await database;
     return await connection.rawDelete("DELETE FROM $table WHERE id = $itemId");
+  }
+
+  getByColumnName(String table, String columnName, String columnValue)async{
+    var connection = await database;
+    return await connection.query(table, where: '$columnName = ?', whereArgs: [columnValue]);
   }
 }

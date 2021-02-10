@@ -1,9 +1,7 @@
 import 'package:TODO/models/category.dart';
 import 'package:TODO/repositories/repository.dart';
-import 'package:flutter/cupertino.dart';
 
 class CategoryService {
-
   Repository _repository;
 
   CategoryService(){
