@@ -1,4 +1,5 @@
 import 'package:TODO/helpers/drawer_navigation.dart';
+import 'package:TODO/screens/todo_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,6 +16,12 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       drawer: DrawerNavigation(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => TodoScreen()));
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

@@ -24,6 +24,22 @@ class Repository{
   }
 
   getAll(table)async{
-    return await _database.query(table);
+    var connection = await database;
+    return await connection.query(table);
+  }
+
+  getById(String table, categoryId)async{
+    var connection = await database;
+    return await connection.query(table,where: 'id=?', whereArgs: [categoryId]);
+  }
+
+  update(String table, itemId)async{
+    var connection = await database;
+    return await connection.update(table, itemId, where: 'id = ?', whereArgs: [itemId['id']]);
+  }
+
+  delete(String table, itemId)async{
+    var connection = await database;
+    return await connection.rawDelete("DELETE FROM $table WHERE id = $itemId");
   }
 }
